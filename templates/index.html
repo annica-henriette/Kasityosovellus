@@ -1,7 +1,7 @@
 {% if session.user_id %}
-Olet kirjautunut sisään.
+<h2>Olet kirjautunut sisään.</h2>
 <p>
-Yleinen keskustelualue
+<h1>Yleinen keskustelualue</h1>
 <p>
 Viestien määrä: {{ count }}
 <hr>
@@ -13,7 +13,7 @@ Viestien määrä: {{ count }}
 <i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
 <hr>
 {% endfor %}
-Projektit
+<h1>Projektit</h1>
 <p>
 Projektien määrä: {{ count }}
 <hr>

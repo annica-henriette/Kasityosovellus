@@ -1,3 +1,8 @@
+{% if session.user_id %}
+Olet kirjautunut sisään.
+<p>
+Yleinen keskustelualue
+<p>
 Viestien määrä: {{ count }}
 <hr>
 {% for message in messages %}
@@ -8,8 +13,22 @@ Viestien määrä: {{ count }}
 <i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
 <hr>
 {% endfor %}
-{% if session.user_id %}
-Olet kirjautunut sisään.
+Projektit
+<p>
+Projektien määrä: {{ count }}
+<hr>
+{% for project in projects %}
+<i>Nimi:</i> {{ project[1] }}
+<p>
+<i>Tekijä:</i> {{ project[0] }}
+<p>
+<i>Aloitus:</i> {{ project[3].strftime("%Y-%m-%d") }}
+<p>
+<i>Valmis:</i> {{ project[4].strftime("%Y-%m-%d") }}
+<p>
+<i>Käytetty ohje:</i> {{ project[5] }}
+<hr>
+{% endfor %}
 <a href="/new">Lähetä viesti</a> | <a href="/logout">Kirjaudu ulos</a>
 {% else %}
 <a href="/login">Kirjaudu sisään</a>

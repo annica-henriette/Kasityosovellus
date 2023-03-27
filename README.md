@@ -13,3 +13,4 @@ Käyttäjä pystyy luomaan uuden projektin/ohjeen, muokkaamaan sitä ja poistama
 Käyttäjä pystyy näkemään tilastoa siitä, kuinka moni on aloittanut hänen laatiman ohjeen. 
 Käyttäjä pystyy järjestämään toisen käyttäjän laatimat ohjeet vaikeusjärjestyksessä.
 
+Kuluneen kahden viikon aikana olen tutustunut kurssin materiaaliin, ladannut tarvittavat ohjelmat ja opetellut niiden käytön. Tällä hetkellä projekti koostuu materiaalin malleista, eikä vielä itse sovelluksen toteuttavaa koodia.

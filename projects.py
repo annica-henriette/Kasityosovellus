@@ -3,7 +3,7 @@ from sqlalchemy.sql import text
 import users
 
 def get_projects():
-    sql = text("SELECT P.name, U.username FROM projects P, users U WHERE P.creator_id=U.id ORDER BY P.id")
+    sql = text("SELECT U.username, P.name, P.start_date, P.finishing_date  FROM projects P, users U WHERE P.creator_id=U.id ORDER BY P.id")
     result = db.session.execute(sql)
     return result.fetchall()
 

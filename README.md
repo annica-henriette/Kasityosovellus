@@ -29,3 +29,25 @@ Lisäksi sovellus antaa virheviestin, jos tunnusta luodessa yritetään luoda jo
 Sovellus antaa virheen myös, jos kirjaudutaan väärillä tunnuksilla.
 Sovelluksessa pystyy tällä hetkellä lähettämään viestejä yleiselle keskustelualueelle sekä lisäämään uusia projekteja.
 Sovelluksessa pääsee klikkaamalla projektin nimeä projektin sivulle.
+<p>
+Olen lisännyt sovelluksen fly.io:n, mutta se ei vielä ole testattavissa siellä (enkä ole vielä itse perehtynyt fly.io:n).
+<p>
+<h2>Sovelluksen testaamisohjeet paikallisesti:</h2> (ohjeet työn alla)
+<p>
+Kloonaa tämä repositorio omalle koneellesi ja siirry sen juurikansioon. Luo kansioon .env-tiedosto ja määritä sen sisältö seuraavanlaiseksi:
+<p>
+DATABASE_URL=<tietokannan-paikallinen-osoite> /
+SECRET_KEY=<salainen-avain>
+<p>
+Seuraavaksi aktivoi virtuaaliympäristö ja asenna sovelluksen riippuvuudet komennoilla
+<li><i>$ python3 -m venv venv</i>
+<li><i>$ source venv/bin/activate</i>
+<li><i>$ pip install -r ./requirements.txt</i> (päivitetty 27.3.2023)
+<p>
+Määritä vielä tietokannan skeema komennolla
+<p>
+<i>$ psql < schema.sql</i>
+<p>
+Nyt voit käynnistää sovelluksen komennolla
+<p>
+<i>$ flask run<i/>

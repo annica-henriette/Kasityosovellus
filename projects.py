@@ -12,7 +12,7 @@ def get_project_info(project_id):
                   WHERE p.id=:project_id AND p.creator_id=u.id""")
     return db.session.execute(sql, {"project_id": project_id}).fetchone()
 
-def add_project(creator_id, name, material, start_date, finishin_date):
+def add_project(creator_id, name, material, start_date, finishing_date):
     sql = text("""INSERT INTO projects (creator_id, name, material, start_date, finishing_date)
                   VALUES (:creator_id, :name, :material, :start_date, :finishing_date)
                   RETURNING id""")

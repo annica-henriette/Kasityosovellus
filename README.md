@@ -36,8 +36,9 @@ Olen lisännyt sovelluksen fly.io:n, mutta se ei vielä ole testattavissa siell�
 <p>
 Kloonaa tämä repositorio omalle koneellesi ja siirry sen juurikansioon. Luo kansioon .env-tiedosto ja määritä sen sisältö seuraavanlaiseksi:
 <p>
-DATABASE_URL=<tietokannan-paikallinen-osoite> /
-SECRET_KEY=<salainen-avain>
+DATABASE_URL=tietokannan-paikallinen-osoite
+<p>
+SECRET_KEY=salainen-avain
 <p>
 Seuraavaksi aktivoi virtuaaliympäristö ja asenna sovelluksen riippuvuudet komennoilla
 <li><i>$ python3 -m venv venv</i>

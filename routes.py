@@ -32,8 +32,8 @@ def add_project():
 @app.route("/projects/<int:project_id>")
 def show_project(project_id):
     info = projects.get_project_info(project_id)
-    return render_template("project.html", id=project_id, name=info[0], creator=info[1],
-                           start_date=info[2], finishing_date=info[3])
+    return render_template("project.html", id=project_id, name=info[0], material=info[1],
+                           start_date=info[2], finishing_date=info[3], creator=info[4])
 
 @app.route("/new")
 def new():

@@ -18,13 +18,9 @@ Viestien määrä: {{ count }}
 Projektien määrä: {{ p_count }}
 <hr>
 {% for project in projects %}
-<a href="/projects/{{ project[4] }}"><i>Nimi:</i> {{ project[1] }}</a>
+<i>Nimi:</i> <a href="/projects/{{ project[4] }}">{{ project[1] }}</a>
 <p>
 <i>Tekijä:</i> {{ project[0] }}
-<p>
-<i>Aloitus:</i> {{ project[2].strftime("%Y-%m-%d") }}
-<p>
-<i>Valmis:</i> {{ project[3].strftime("%Y-%m-%d") }}
 <hr>
 {% endfor %}
 <a href="/new">Lähetä viesti</a> | <a href="/add">Lisää projekti</a>

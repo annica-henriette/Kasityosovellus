@@ -23,6 +23,7 @@ def add_project():
             return render_template("error.html", message="Vastauksessa tulee olla 1-20 merkkiä")
 
         start_date = request.form["start_date"]
+
         finishing_date = request.form["finishing_date"]
 
         project_id = projects.add_project(users.user_id(), name, material, start_date, finishing_date)

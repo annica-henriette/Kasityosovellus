@@ -1,5 +1,11 @@
 from db import db
 from sqlalchemy.sql import text
+import users
+
+def get_projects():
+    sql = text("SELECT P.name, U.username FROM projects P, users U WHERE P.creator_id=U.id ORDER BY P.id")
+    result = db.session.execute(sql)
+    return result.fetchall()
 
 def add_project(creator_id, name, material, start_date, finishin_date):
     sql = text("""INSERT INTO projects (creator_id, name, material, start_date, finishing_date)

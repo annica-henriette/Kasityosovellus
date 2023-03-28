@@ -15,11 +15,11 @@ def add_project():
     if request.method == "POST":
         name = request.form["name"]
         if len(name) < 1 or len(name) > 20:
-            return render_template("error.html"), message="Nimessä tulee olla 1-20 merkkiä")
+            return render_template("error.html", message="Nimessä tulee olla 1-20 merkkiä")
         
         material = request.form["material"]
         if len(material) < 1 or len(material) > 20:
-            return render_template("error.html"), message="Vastauksessa tulee olla 1-20 merkkiä")
+            return render_template("error.html", message="Vastauksessa tulee olla 1-20 merkkiä")
 
         start_date = request.form["start_date"]
         finishing_date = request.form["finishing_date"]

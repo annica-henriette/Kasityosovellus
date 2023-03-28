@@ -18,7 +18,7 @@ Viestien määrä: {{ count }}
 Projektien määrä: {{ p_count }}
 <hr>
 {% for project in projects %}
-<a href="/projects/<int:{{ project[4] }}>"><i>Nimi:</i> {{ project[1] }}</a>
+<a href="/projects/{{ project[4] }}"><i>Nimi:</i> {{ project[1] }}</a>
 <p>
 <i>Tekijä:</i> {{ project[0] }}
 <p>

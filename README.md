@@ -7,19 +7,19 @@ Sovelluksen ominaisuuksia:
 <p>
 <li>Käyttäjä voi kirjautua sisään ja ulos sekä luoda uuden tunnuksen. 
 
-<li>Käyttäjä näkee listan omista projekteista ja voi muokata niitä. 
+<li>Käyttäjä näkee omat projektit ja voi poistaa niitä. (TODO) 
 
 <li>Käyttäjä voi lisätä omalle projektille aloituspäivämäärän, päätöspäivämäärän ja tiedon siitä mitä materiaalia ja ohjetta on käyttänyt (viimeinen toiminnallisuus ei vielä toiminnassa). 
 
-<li>Käyttäjä voi laatia oman käsityöohjeen tekstimuodossa ja antaa sille vaikeusasteen. Käyttäjä voi katsella muiden ohjeita ja projekteja ja kommentoida niitä (tähdet ja kommentit) ja lukea muiden kommentteja. 
+<li>Käyttäjä voi laatia oman käsityöohjeen ja antaa sille vaikeusasteen.(TODO)
 
-<li>Käyttäjä pystyy näkemään tilaston siitä, montako projektia on aloittanut ja montako on kesken. 
+<li>Käyttäjä voi katsella muiden ohjeita ja projekteja ja kommentoida niitä (tähdet ja kommentit) ja lukea muiden kommentteja.(TODO) 
 
-<li>Käyttäjä pystyy luomaan uuden projektin/ohjeen, muokkaamaan sitä ja poistamaan sen, sekä poistamaan muiden antamia kommentteja. 
+<li>Käyttäjä pystyy luomaan uuden projektin/ohjeen ja poistamaan sen, sekä poistamaan muiden antamia kommentteja.(TODO) 
 
-<li>Käyttäjä pystyy näkemään tilastoa siitä, kuinka moni on aloittanut hänen laatiman ohjeen. 
+<li>Käyttäjä pystyy näkemään tilastoa siitä, kuinka moni on aloittanut hänen laatiman ohjeen.(TODO) 
 
-<li>Käyttäjä pystyy järjestämään toisen käyttäjän laatimat ohjeet vaikeusjärjestyksessä.
+<li>Käyttäjä pystyy järjestämään toisen käyttäjän laatimat ohjeet vaikeusjärjestyksessä.(TODO, saattaa olla, että jää pois)
 
 <li> Käyttäjä pystyy keskustelemaan muiden käyttäjien kanssa yhteisellä keskustelupalstalla.
 <p>

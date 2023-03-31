@@ -19,3 +19,15 @@ def add_project(creator_id, name, material, start_date, finishing_date):
     project_id = db.session.execute(sql, {"creator_id":creator_id, "name":name, "material":material, "start_date":start_date, "finishing_date":finishing_date}).fetchone()[0]
     db.session.commit()
     return project_id
+
+def add_reviews(project_id, user_id, stars, comment):
+    sql = text("""INSERT INTO reviews (project_id, user_id, stars, comment)
+	          VALUES (:project_id, :user_id, :stars, :comment)""")
+    db.session.execute(sql, {"project_id":project_id, "user_id":user_id,
+			     "stars":stars, "comment":comment})
+    db.session.commit()
+
+def get_reviews(project_id):
+    sql = text("""SELECT u.username, r.stars, r.comment FROM reviews r, users u
+	       WHERE r.user_id=u.id AND r.project_id=:project_id ORDER BY r.id""")
+    return db.session.execute(sql, {"project_id":project_id}).fetchall()

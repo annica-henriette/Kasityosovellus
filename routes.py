@@ -53,6 +53,15 @@ def show_project(project_id):
     return render_template("projects.html", id=project_id, name=info[0], material=info[1],
                            start_date=info[2], finishing_date=info[3], creator=info[4], reviews=reviews)
 
+@app.route("/instructions/<int:instruction_id>")
+def show_instruction(instruction_id):
+    info = instructions.get_instruction_info(instruction_id)
+    
+    reviews = instructions.get_review(instruction_id)    
+
+    return render_template("instructions.html", id=instruction_id, name=info[0], content=info[1],
+                           difficulty=info[2], creator=info[3], reviews=reviews)
+
 @app.route("/review", methods=["post"])
 def review():
     project_id = request.form["project_id"]

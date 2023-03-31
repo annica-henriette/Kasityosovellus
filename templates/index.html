@@ -1,7 +1,7 @@
-<h2>Etusivu</h2>
+<h1>Etusivu</h1>
 
 {% if session.user_id %}
-Olet kirjautunut sisään.<a href="/logout">Kirjaudu ulos</a>
+Olet kirjautunut sisään. <a href="/logout">Kirjaudu ulos</a>
 {% else %}
 Et ole kirjautunut sisään. <a href="/login">Kirjaudu sisään</a>
 <p>
@@ -11,7 +11,7 @@ Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">täs
 <p>
 
 <p>
-<h1>Yleinen keskustelualue</h1>
+<h2>Yleinen keskustelualue</h2>
 <p>
 Viestien määrä: {{ count }}
 <hr>
@@ -26,7 +26,7 @@ Viestien määrä: {{ count }}
 {% endfor %}
 <a href="/new">Lähetä viesti</a> 
 
-<h1>Projektit</h1>
+<h2>Projektit</h2>
 <p>
 Projektien määrä: {{ p_count }}
 <hr>

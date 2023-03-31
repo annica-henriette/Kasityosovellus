@@ -20,6 +20,11 @@ def add_project(creator_id, name, material, start_date, finishing_date):
     db.session.commit()
     return project_id
 
+def remove_project(project_id, user_id):
+    sql = text("UPDATE projects WHERE id=:id AND creator_id=:user_id")
+    db.session.execute(sql, {"id":project_id, "user_id":user_id})
+    db.session.commit()
+
 def add_review(project_id, user_id, stars, comment):
     sql = text("""INSERT INTO reviews (project_id, user_id, stars, comment)
 	          VALUES (:project_id, :user_id, :stars, :comment)""")

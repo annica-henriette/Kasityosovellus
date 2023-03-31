@@ -1,0 +1,21 @@
+<h2>Poista ohje</h2>
+
+<form action="/remove_instruction" method="post">
+
+<p>Minkä ohjeen haluat poistaa?</p>
+
+{% for instruction in list %}
+
+<input type="radio" name="instruction" value="{{ instruction.id }}"> {{ instruction.name }} <br>
+
+{% endfor %}
+
+<p>
+
+<input type="submit" value="Poista">
+
+
+</form>
+
+<p>
+<a href="/">Palaa takaisin</a>

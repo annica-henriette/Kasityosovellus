@@ -35,6 +35,24 @@ def show_project(project_id):
     return render_template("projects.html", id=project_id, name=info[0], material=info[1],
                            start_date=info[2], finishing_date=info[3], creator=info[4])
 
+@app.route("/review", methods=["post"])
+def review():
+    project_id = request.form["project_id"]
+
+    stars = int(request.form["stars"])
+    if stars < 1 or stars > 5:
+        return render_template("error.html", message="Virheellinen tähtimäärä")
+
+    comment = request.form["comment"]
+    if len(comment) > 1000:
+        return render_template("error.html", message="Kommentti on liian pitkä")
+    if comment == "":
+        comment = "-"
+
+    projects.add_review(project_id, users.user_id(), stars, comment)
+
+    return redirect("/projects/"+str(project_id))
+
 @app.route("/new")
 def new():
     return render_template("new.html")

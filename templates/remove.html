@@ -1,1 +1,21 @@
-Tyhjä sivu, saattaa vielä olla käyttöä
+<h2>Poista projekti</h2>
+
+<form action="/remove" method="post">
+
+<p>Minkä projektin haluat poistaa?</p>
+
+{% for project in list %}
+
+<input type="radio" name="project" value="{{ project.id }}"> {{ project.name }} <br>
+
+{% endfor %}
+
+<p>
+
+<input type="submit" value="Poista">
+
+
+</form>
+
+<p>
+<a href="/">Palaa takaisin</a>

@@ -32,8 +32,11 @@ def add_project():
 @app.route("/projects/<int:project_id>")
 def show_project(project_id):
     info = projects.get_project_info(project_id)
+    
+    reviews = projects.get_review(project_id)    
+
     return render_template("projects.html", id=project_id, name=info[0], material=info[1],
-                           start_date=info[2], finishing_date=info[3], creator=info[4])
+                           start_date=info[2], finishing_date=info[3], creator=info[4], reviews=reviews)
 
 @app.route("/review", methods=["post"])
 def review():

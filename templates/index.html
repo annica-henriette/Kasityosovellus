@@ -36,6 +36,20 @@ Projektien määrä: {{ p_count }}
 
 <a href="/add">Lisää projekti</a> | <a href="/remove">Poista projekti</a>
 
+<h2>Ohjeet</h2>
+<p>
+Ohjeiden määrä: {{ o_count }}
+<hr>
+
+{% for instruction in instructions %}
+<i>Nimi:</i> <a href="/instructions/{{ instruction[4] }}">{{ instruction[1] }}</a>
+<p>
+<i>Tekijä:</i> {{ instruction[0] }}
+<hr>
+{% endfor %}
+
+<a href="/add_instruction">Lisää ohje</a> | <a href="/remove_instruction">Poista ohje</a>
+
 {% else %}
 Et ole kirjautunut sisään. <a href="/login">Kirjaudu sisään</a>
 

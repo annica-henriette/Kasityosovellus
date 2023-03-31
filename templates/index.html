@@ -1,10 +1,21 @@
+<h2>Etusivu</h2>
+
 {% if session.user_id %}
-<h2>Olet kirjautunut sisään.</h2><a href="/logout">Kirjaudu ulos</a>
+Olet kirjautunut sisään.<a href="/logout">Kirjaudu ulos</a>
+{% else %}
+Et ole kirjautunut sisään. <a href="/login">Kirjaudu sisään</a>
+<p>
+Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä</a>
+{% endif %}
+
+<p>
+
 <p>
 <h1>Yleinen keskustelualue</h1>
 <p>
 Viestien määrä: {{ count }}
 <hr>
+
 {% for message in messages %}
 <i>Viesti:</i> {{ message[0] }}
 <p>
@@ -13,19 +24,18 @@ Viestien määrä: {{ count }}
 <i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
 <hr>
 {% endfor %}
+<a href="/new">Lähetä viesti</a> 
+
 <h1>Projektit</h1>
 <p>
 Projektien määrä: {{ p_count }}
 <hr>
+
 {% for project in projects %}
 <i>Nimi:</i> <a href="/projects/{{ project[4] }}">{{ project[1] }}</a>
 <p>
 <i>Tekijä:</i> {{ project[0] }}
 <hr>
 {% endfor %}
-<a href="/new">Lähetä viesti</a> | <a href="/add">Lisää projekti</a>
-{% else %}
-<a href="/login">Kirjaudu sisään</a>
-<p>
-Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä</a>
-{% endif %}
+
+<a href="/add">Lisää projekti</a> | <a href="/remove">Poista projekti</a>

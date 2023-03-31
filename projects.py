@@ -20,14 +20,14 @@ def add_project(creator_id, name, material, start_date, finishing_date):
     db.session.commit()
     return project_id
 
-def add_reviews(project_id, user_id, stars, comment):
+def add_review(project_id, user_id, stars, comment):
     sql = text("""INSERT INTO reviews (project_id, user_id, stars, comment)
 	          VALUES (:project_id, :user_id, :stars, :comment)""")
     db.session.execute(sql, {"project_id":project_id, "user_id":user_id,
 			     "stars":stars, "comment":comment})
     db.session.commit()
 
-def get_reviews(project_id):
+def get_review(project_id):
     sql = text("""SELECT u.username, r.stars, r.comment FROM reviews r, users u
 	       WHERE r.user_id=u.id AND r.project_id=:project_id ORDER BY r.id""")
     return db.session.execute(sql, {"project_id":project_id}).fetchall()

@@ -29,6 +29,21 @@ def add_project():
         project_id = projects.add_project(users.user_id(), name, material, start_date, finishing_date)
         return redirect("/projects/"+str(project_id))
 
+@app.route("/remove", methods=["get", "post"])
+def remove_project():
+
+    if request.method == "GET":
+        my_projects = projects.get_my_projects(users.user_id())
+        return render_template("remove.html", list=my_projects)
+
+    if request.method == "POST":
+
+        if "project" in request.form:
+            project = request.form["project"]
+            projects.remove_project(project, users.user_id())
+
+        return redirect("/")
+
 @app.route("/projects/<int:project_id>")
 def show_project(project_id):
     info = projects.get_project_info(project_id)

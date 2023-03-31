@@ -26,7 +26,7 @@ def add_project(creator_id, name, material, start_date, finishing_date):
     return project_id
 
 def remove_project(project_id, user_id):
-    sql = text("UPDATE projects WHERE id=:id AND creator_id=:user_id")
+    sql = text("DELETE FROM projects WHERE id=:id AND creator_id=:user_id")
     db.session.execute(sql, {"id":project_id, "user_id":user_id})
     db.session.commit()
 

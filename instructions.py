@@ -22,7 +22,7 @@ def add_instruction(creator_id, name, content,difficulty):
     sql = text("""INSERT INTO instructions (creator_id, name, content, difficulty)
                   VALUES (:creator_id, :name, :content, :difficulty)
                   RETURNING id""")
-    project_id = db.session.execute(sql, {"creator_id":creator_id, "name":name, "content":content, "difficulty":difficulty}).fetchone()[0]
+    instruction_id = db.session.execute(sql, {"creator_id":creator_id, "name":name, "content":content, "difficulty":difficulty}).fetchone()[0]
     db.session.commit()
     return instruction_id
 

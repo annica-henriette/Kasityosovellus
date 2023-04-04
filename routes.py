@@ -68,7 +68,7 @@ def remove_instruction():
 
     if request.method == "GET":
         my_instructions = instructions.get_my_instructions(users.user_id())
-        return render_template("remove_instructions.html", list=my_instructions)
+        return render_template("remove_instruction.html", list=my_instructions)
 
     if request.method == "POST":
 

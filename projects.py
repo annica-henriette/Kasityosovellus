@@ -18,7 +18,7 @@ def get_project_info(project_id):
     return db.session.execute(sql, {"project_id": project_id}).fetchone()
 
 def get_project_instruction(project_id):
-    sql = text("""SELECT i.name FROM projects p, instructions i WHERE p.id=:project_id AND p.instruction_used=i.id""")
+    sql = text("""SELECT i.id, i.name FROM projects p, instructions i WHERE p.id=:project_id AND p.instruction_used=i.id""")
     return db.session.execute(sql, {"project_id": project_id}).fetchone()
 
 def add_project(creator_id, name, material, start_date, finishing_date, instruction_used):

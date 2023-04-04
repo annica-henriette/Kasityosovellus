@@ -29,6 +29,25 @@ def add_project():
         project_id = projects.add_project(users.user_id(), name, material, start_date, finishing_date)
         return redirect("/projects/"+str(project_id))
 
+@app.route("/add_instruction", methods=["get", "post"])
+def add_instruction():
+    if request.method == "GET":
+        return render_template("add_instruction.html")
+
+    if request.method == "POST":
+        name = request.form["name"]
+        if len(name) < 1 or len(name) > 20:
+            return render_template("error.html", message="Nimessä tulee olla 1-20 merkkiä")
+
+        content = request.form["content"]
+        if len(content) < 1 or len(content) > 1000:
+            return render_template("error.html", message="Vastauksessa tulee olla 1-1000 merkkiä")
+
+        difficulty = request.form["difficulty"]
+
+        instruction_id = instructions.add_instruction(users.user_id(), name, content, difficulty)
+        return redirect("/instructions/"+str(instruction_id))
+
 @app.route("/remove", methods=["get", "post"])
 def remove_project():
 

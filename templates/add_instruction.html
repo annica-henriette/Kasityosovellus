@@ -1,0 +1,24 @@
+<h2>Tee uusi ohje</h2>
+
+<form action="/add_instruction" method="post">
+
+<p>Ohjeen nimi:<br>
+<input type="text" name="name" minlength="1" maxlength="20"></p>
+
+<p>Ohje:<br>
+<input type="text" name="content" minlength="1" maxlength="1000"></p>
+
+Vaikeusaste:
+<select name="difficulty">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+</select>
+<p>
+
+<input type="submit" value="Lähetä">
+
+</form>
+

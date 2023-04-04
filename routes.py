@@ -6,7 +6,8 @@ from flask import render_template, request, redirect
 def index():
     list = messages.get_list()
     p_list = projects.get_projects()
-    return render_template("index.html", count=len(list), messages=list, p_count=len(p_list), projects=p_list)
+    o_list = instructions.get_instructions()
+    return render_template("index.html", count=len(list), messages=list, p_count=len(p_list), projects=p_list, o_count=len(o_list), instructions=o_list)
 
 @app.route("/add", methods=["get", "post"])
 def add_project():

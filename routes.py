@@ -12,7 +12,8 @@ def index():
 @app.route("/add", methods=["get", "post"])
 def add_project():
     if request.method == "GET":
-        return render_template("add.html")
+     instruction_list = instructions.get_instructions()   
+     return render_template("add.html", instruction_list=instruction_list)
 
     if request.method == "POST":
         name = request.form["name"]

@@ -15,11 +15,13 @@
 <input type="date" name="finishing_date"></p>
 
 <p>Ohje:<br>
-<select name="instruction_used" id="instructions">
+<select name="instruction_used">
 {% for instruction in instruction_list %}
-<option value={{ id }}>{{ name }}</option>
+<option value={{ instruction[4] }}>{{ instruction[1] }}</option>
 {% endfor %}
 </select>
+
+<p>
 
 <input type="submit" value="Lähetä">
 

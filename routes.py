@@ -63,6 +63,21 @@ def remove_project():
 
         return redirect("/")
 
+@app.route("/remove_instruction", methods=["get", "post"])
+def remove_project():
+
+    if request.method == "GET":
+        my_instructions = instructions.get_my_instructions(users.user_id())
+        return render_template("remove_instructions.html", list=my_instructions)
+
+    if request.method == "POST":
+
+        if "instruction" in request.form:
+            instruction = request.form["instruction"]
+            instructions.remove_instruction(instruction, users.user_id())
+
+        return redirect("/")
+
 @app.route("/projects/<int:project_id>")
 def show_project(project_id):
     info = projects.get_project_info(project_id)

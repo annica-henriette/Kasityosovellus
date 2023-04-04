@@ -30,8 +30,10 @@ def add_project(creator_id, name, material, start_date, finishing_date, instruct
     return project_id
 
 def remove_project(project_id, user_id):
-    sql = text("DELETE FROM projects WHERE id=:id AND creator_id=:user_id")
-    db.session.execute(sql, {"id":project_id, "user_id":user_id})
+    sql1 = text("DELETE FROM reviews WHERE project_id=:project_id AND user_id=:user_id")
+    sql = text("DELETE FROM projects WHERE id=:project_id AND creator_id=:user_id")
+    db.session.execute(sql1, {"project_id":project_id, "user_id":user_id})
+    db.session.execute(sql, {"project_id":project_id, "user_id":user_id})
     db.session.commit()
 
 def add_review(project_id, user_id, stars, comment):

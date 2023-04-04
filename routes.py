@@ -28,7 +28,7 @@ def add_project():
 
         finishing_date = request.form["finishing_date"]
         
-        instruction_used = request.from["instruction_used"]
+        instruction_used = request.form["instruction_used"]
         
         project_id = projects.add_project(users.user_id(), name, material, start_date, finishing_date, instruction_used)
         return redirect("/projects/"+str(project_id))

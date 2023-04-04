@@ -26,8 +26,10 @@ def add_project():
         start_date = request.form["start_date"]
 
         finishing_date = request.form["finishing_date"]
-
-        project_id = projects.add_project(users.user_id(), name, material, start_date, finishing_date)
+        
+        instruction_used = request.from["instruction_used"]
+        
+        project_id = projects.add_project(users.user_id(), name, material, start_date, finishing_date, instruction_used)
         return redirect("/projects/"+str(project_id))
 
 @app.route("/add_instruction", methods=["get", "post"])

@@ -115,6 +115,24 @@ def review():
 
     return redirect("/projects/"+str(project_id))
 
+@app.route("/review_instruction", methods=["post"])
+def review_instruction():
+    instruction_id = request.form["instruction_id"]
+
+    stars = int(request.form["stars"])
+    if stars < 1 or stars > 5:
+        return render_template("error.html", message="Virheellinen tähtimäärä")
+
+    comment = request.form["comment"]
+    if len(comment) > 1000:
+        return render_template("error.html", message="Kommentti on liian pitkä")
+    if comment == "":
+        comment = "-"
+
+    instructions.add_review(instruction_id, users.user_id(), stars, comment)
+
+    return redirect("/instructions/"+str(instruction_id))
+
 @app.route("/new")
 def new():
     return render_template("new.html")

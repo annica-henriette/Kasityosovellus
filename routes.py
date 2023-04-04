@@ -1,5 +1,5 @@
 from app import app
-import messages, users, projects
+import messages, users, projects, instructions
 from flask import render_template, request, redirect
 
 @app.route("/")

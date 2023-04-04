@@ -85,11 +85,11 @@ def remove_instruction():
 @app.route("/projects/<int:project_id>")
 def show_project(project_id):
     info = projects.get_project_info(project_id)
-    instruction_used = projects.get_project_instruction(project_id)    
+    i_info = projects.get_project_instruction(project_id)    
     reviews = projects.get_review(project_id)    
 
     return render_template("projects.html", id=project_id, name=info[0], material=info[1],
-                           start_date=info[2], finishing_date=info[3], creator=info[4], reviews=reviews, instruction_used=instruction_used)
+                           start_date=info[2], finishing_date=info[3], creator=info[4], reviews=reviews, i_info=i_info)
 
 @app.route("/instructions/<int:instruction_id>")
 def show_instruction(instruction_id):

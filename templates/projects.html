@@ -5,7 +5,7 @@
 <li> Materiaali: {{ material }}
 <li> Aloituspäivä: {{ start_date }}
 <li> Valmis: {{ finishing_date }}
-<li> Ohje: {{ instruction_used }}
+<li> Ohje:<a href="/instructions/{{ i_info[0] }}">{{ i_info[1] }}</a>
 </ul>
 
 {% if reviews %}

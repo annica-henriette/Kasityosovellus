@@ -1,6 +1,6 @@
 from db import db
 from sqlalchemy.sql import text
-import users
+import users, instructions
 
 def get_projects():
     sql = text("SELECT U.username, P.name, P.start_date, P.finishing_date, P.id FROM projects P, users U WHERE P.creator_id=U.id ORDER BY P.id")
@@ -15,6 +15,10 @@ def get_my_projects(user_id):
 def get_project_info(project_id):
     sql = text("""SELECT p.name, p.material, p.start_date, p.finishing_date, u.username FROM projects p, users u
                   WHERE p.id=:project_id AND p.creator_id=u.id""")
+    return db.session.execute(sql, {"project_id": project_id}).fetchone()
+
+def get_project_instruction(project_id):
+    sql = text("""SELECT i.name FROM projects p, instructions i WHERE p.id=:project_id AND p.instruction_used=i.id""")
     return db.session.execute(sql, {"project_id": project_id}).fetchone()
 
 def add_project(creator_id, name, material, start_date, finishing_date, instruction_used):

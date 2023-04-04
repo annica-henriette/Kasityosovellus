@@ -17,11 +17,11 @@ def get_project_info(project_id):
                   WHERE p.id=:project_id AND p.creator_id=u.id""")
     return db.session.execute(sql, {"project_id": project_id}).fetchone()
 
-def add_project(creator_id, name, material, start_date, finishing_date):
-    sql = text("""INSERT INTO projects (creator_id, name, material, start_date, finishing_date)
-                  VALUES (:creator_id, :name, :material, :start_date, :finishing_date)
+def add_project(creator_id, name, material, start_date, finishing_date, instruction_used):
+    sql = text("""INSERT INTO projects (creator_id, name, material, start_date, finishing_date, instruction_used)
+                  VALUES (:creator_id, :name, :material, :start_date, :finishing_date, :instruction_used)
                   RETURNING id""")
-    project_id = db.session.execute(sql, {"creator_id":creator_id, "name":name, "material":material, "start_date":start_date, "finishing_date":finishing_date}).fetchone()[0]
+    project_id = db.session.execute(sql, {"creator_id":creator_id, "name":name, "material":material, "start_date":start_date, "finishing_date":finishing_date, "instruction_used":instruction_used}).fetchone()[0]
     db.session.commit()
     return project_id
 

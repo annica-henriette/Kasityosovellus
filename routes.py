@@ -64,7 +64,7 @@ def remove_project():
         return redirect("/")
 
 @app.route("/remove_instruction", methods=["get", "post"])
-def remove_project():
+def remove_instruction():
 
     if request.method == "GET":
         my_instructions = instructions.get_my_instructions(users.user_id())

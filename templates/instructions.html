@@ -20,8 +20,10 @@
 </ul>
 
 {% if session.user_id %}
+
 <h3>Arvioi ohje</h3>
 <form action="/review_instruction" method="post">
+
 Tähdet:
 <select name="stars">
 <option value="1">1
@@ -30,13 +32,17 @@ Tähdet:
 <option value="4">4
 <option value="5">5
 </select>
+
 <p>
+
 Kommentti:<br>
 <textarea name="comment" rows="3" cols="40" maxlength="1000"></textarea>
-<p><input type="submit" value="Lähetä">
+<p><input id="button" type="submit" value="Lähetä">
 <input type="hidden" name="instruction_id" value="{{ id }}">
 <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+
 </form>
+
 {% endif %}
 
 <p>

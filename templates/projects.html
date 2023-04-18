@@ -22,8 +22,10 @@
 </ul>
 
 {% if session.user_id %}
+
 <h3>Arvioi projekti</h3>
 <form action="/review" method="post">
+
 Tähdet:
 <select name="stars">
 <option value="1">1
@@ -33,12 +35,15 @@ Tähdet:
 <option value="5">5
 </select>
 <p>
+
 Kommentti:<br>
-<textarea name="comment" rows="3" cols="40" maxlength="1000"></textarea>
-<p><input type="submit" value="Lähetä">
+<textarea name="comment" rows="5" cols="35" maxlength="1000"></textarea>
+<p><input id="button" type="submit" value="Lähetä">
 <input type="hidden" name="project_id" value="{{ id }}">
 <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+
 </form>
+
 {% endif %}
 
 <p>

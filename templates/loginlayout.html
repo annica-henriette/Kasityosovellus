@@ -3,11 +3,15 @@
 <link rel="stylesheet" href="/static/main.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>Käsityösovellus{% block title %}{% endblock %}</title>
+
 <body>
-  <title>Käsityösovellus{% block title %}{% endblock %}</title>
-  <h1>Käsityösovellus</h1>
-  <hr>
-  <h2> Tervetuloa sovellukseen!</h2>
+  <div class="header">
+        <h1>Käsityösovellus</h1>
+  </div>
+
+  <div class="content">
+  	<h2> Tervetuloa sovellukseen!</h2>
 
   <p>
     Sovelluksen avulla voit pitää kirjaa omista käsityöprojekteista ja ohjesta.
@@ -16,5 +20,5 @@
   </p>
   <hr>
   {% block login_content %}{% endblock %}
-  <hr>
+  </div>
 </body>

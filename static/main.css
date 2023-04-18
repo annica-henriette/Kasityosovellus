@@ -19,3 +19,18 @@ td, th {
     border-color: black;
     border-width: 1px;
 }
+
+.header {
+    background: sandybrown;
+    font-weight: bold;
+    padding: 2em 1em;
+    font-size: 2em;
+    border-radius: .5em;
+    margin-top: .5em;
+}
+
+.content {
+   background: white;
+   padding: 1.5em 2em;
+   border-radius: .5em
+}

@@ -13,7 +13,6 @@ def login(username, password):
     else:
         if check_password_hash(user.password, password):
             session["user_id"] = user.id
-            session["user_username"] = user.username
             session["csrf_token"] = os.urandom(16).hex()
             return True
         else:

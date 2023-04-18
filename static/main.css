@@ -87,7 +87,7 @@ form #button:hover{
     color: white;
 }
 
-a.one:link, a.one:visited {
+a:link, a:visited {
   background-color: white;
   color: black;
   border: 2px solid green;
@@ -97,7 +97,13 @@ a.one:link, a.one:visited {
   display: inline-block;
 }
 
-a.one:hover, a.one:active {
+a:hover, a:active {
   background-color: green;
   color: white;
 }
+
+a.nav {color: white; text-decoration: none;}
+a.nav:link {color: white;}
+a.nav:visited {color: yellow;}
+a.nav:hover {color: orange;}
+a.nav:active {color: fuschia;}

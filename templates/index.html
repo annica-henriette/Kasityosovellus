@@ -1,7 +1,8 @@
-
-<h1>Käsityösovellus</h1>
-
 {% if session.user_id %}
+
+{% extends "layout.html" %}
+{% block content %}
+
 <h2>Etusivu</h2>
 Olet kirjautunut sisään. <a href="/logout">Kirjaudu ulos</a>
 
@@ -34,8 +35,6 @@ Projektien määrä: {{ p_count }}
 <hr>
 {% endfor %}
 
-<a href="/add">Lisää projekti</a> | <a href="/remove">Poista projekti</a>
-
 <h2>Ohjeet</h2>
 <p>
 Ohjeiden määrä: {{ o_count }}
@@ -48,12 +47,17 @@ Ohjeiden määrä: {{ o_count }}
 <hr>
 {% endfor %}
 
-<a href="/add_instruction">Lisää ohje</a> | <a href="/remove_instruction">Poista ohje</a>
+{% endblock %}
 
 {% else %}
+<h1>Käsityösovellus</h1>
+
+<p>
+
 Et ole kirjautunut sisään. <a href="/login">Kirjaudu sisään</a>
 
 <p>
 
 Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä</a>
 {% endif %}
+

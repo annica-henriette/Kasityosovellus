@@ -5,8 +5,16 @@
 
 <body>
   <title>Käsityösovellus{% block title %}{% endblock %}</title>
-   <h1>Käsityösovellus</h1>
-   <hr>
-   {% block login_content %}{% endblock %}
-   <hr>
+  <h1>Käsityösovellus</h1>
+  <hr>
+  <h2> Tervetuloa sovellukseen!</h2>
+
+  <p>
+    Sovelluksen avulla voit pitää kirjaa omista käsityöprojekteista ja ohjesta.
+    Voit kommentoida muiden ohjeita ja projekteja sekä keskustella muiden käyttäjien kanssa
+    yleisellä keskustelualueella.
+  </p>
+  <hr>
+  {% block login_content %}{% endblock %}
+  <hr>
 </body>

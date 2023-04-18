@@ -49,7 +49,9 @@ Ohjeiden määrä: {{ o_count }}
 {% endblock %}
 
 {% else %}
-<h1>Käsityösovellus</h1>
+
+{% extends "loginlayout.html" %}
+{% block login_content %}
 
 <p>
 
@@ -58,5 +60,8 @@ Et ole kirjautunut sisään. <a href="/login">Kirjaudu sisään</a>
 <p>
 
 Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä</a>
+
+{% endblock %}
+
 {% endif %}
 

@@ -61,8 +61,12 @@ def remove_project():
 
     if request.method == "GET":
         my_projects = projects.get_my_projects(users.user_id())
-        return render_template("remove.html", list=my_projects)
+        
+        if len(my_projects) < 1:
+            return render_template("error.html", message="Sinulla ei vielä ole projekteja")
 
+        return render_template("remove.html", list=my_projects)
+    
     if request.method == "POST":
         users.check_csrf()
 
@@ -77,6 +81,10 @@ def remove_instruction():
 
     if request.method == "GET":
         my_instructions = instructions.get_my_instructions(users.user_id())
+
+        if len(my_instructions) < 1:
+            return render_template("error.html", message="Sinulla ei vielä ole ohjeita")
+
         return render_template("remove_instruction.html", list=my_instructions)
 
     if request.method == "POST":

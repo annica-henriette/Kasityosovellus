@@ -1,7 +1,7 @@
 body {
     margin: auto;
     max-width: 45em;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: "Courier New", "Lucida Console", monospace;
     background-color: #fffaf0;
 }
 
@@ -10,10 +10,6 @@ nav li {
     background: white;
     border-radius: .5em;
     margin: .2em;
-}
-
-nav li:hover {
-    background-color: rgb(226, 226, 226);
 }
 
 nav ul {
@@ -45,6 +41,13 @@ td, th {
     font-size: 2em;
     border-radius: .5em;
     margin-top: .5em;
+}
+
+.subhead {
+    background-color: #fffafa;
+    text-align: left;
+    padding: 1em 1em;
+    border-radius: .5em;
 }
 
 .content {
@@ -83,7 +86,7 @@ form #button:hover{
 }
 
 a:link, a:visited {
-  background-color: white;
+  background-color: fffafa;
   color: black;
   border-radius: .5em;
   padding: .0em .5em;

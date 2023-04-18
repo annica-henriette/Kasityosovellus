@@ -3,48 +3,60 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h2>Etusivu</h2>
-Olet kirjautunut sisään. <a href="/logout">Kirjaudu ulos</a>
+<div class="subhead">
+  <h2>Etusivu</h2>
+  Olet kirjautunut sisään. <a href="/logout">Kirjaudu ulos</a>
+</div>
 
 <p>
 
-<h2>Yleinen keskustelualue</h2>
-<p>
-Viestien määrä: {{ count }}
-<hr>
+<div class="subhead">
+  <h2>Yleinen keskustelualue</h2>
+  <p>
+  Viestien määrä: {{ count }}
+  <hr>
 
-{% for message in messages %}
-<i>Viesti:</i> {{ message[0] }}
-<p>
-<i>Lähettäjä:</i> {{ message[1] }}
-<p>
-<i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
-<hr>
-{% endfor %}
+  {% for message in messages %}
+  <i>Viesti:</i> {{ message[0] }}
+  <p>
+  <i>Lähettäjä:</i> {{ message[1] }}
+  <p>
+  <i>Aika:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}
+  <hr>
+  {% endfor %}
+</div>
 
-<h2>Projektit</h2>
 <p>
-Projektien määrä: {{ p_count }}
-<hr>
 
-{% for project in projects %}
-<i>Nimi:</i> <a href="/projects/{{ project[4] }}">{{ project[1] }}</a>
-<p>
-<i>Tekijä:</i> {{ project[0] }}
-<hr>
-{% endfor %}
+<div class="subhead">
+  <h2>Projektit</h2>
+  <p>
+  Projektien määrä: {{ p_count }}
+  <hr>
 
-<h2>Ohjeet</h2>
-<p>
-Ohjeiden määrä: {{ o_count }}
-<hr>
+  {% for project in projects %}
+  <i>Nimi:</i> <a href="/projects/{{ project[4] }}">{{ project[1] }}</a>
+  <p>
+  <i>Tekijä:</i> {{ project[0] }}
+  <hr>
+  {% endfor %}
+</div>
 
-{% for instruction in instructions %}
-<i>Nimi:</i> <a href="/instructions/{{ instruction[4] }}">{{ instruction[1] }}</a>
 <p>
-<i>Tekijä:</i> {{ instruction[0] }}
-<hr>
-{% endfor %}
+
+<div class="subhead">
+  <h2>Ohjeet</h2>
+  <p>
+  Ohjeiden määrä: {{ o_count }}
+  <hr>
+
+  {% for instruction in instructions %}
+  <i>Nimi:</i> <a href="/instructions/{{ instruction[4] }}">{{ instruction[1] }}</a>
+  <p>
+  <i>Tekijä:</i> {{ instruction[0] }}
+  <hr>
+  {% endfor %}
+</div>
 
 {% endblock %}
 

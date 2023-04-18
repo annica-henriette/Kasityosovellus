@@ -1,3 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+
 <form action="/send" method="post">
 Viesti: <br>
 <textarea name="content" rows="3" cols="40"></textarea>
@@ -6,3 +9,5 @@ Viesti: <br>
 </form>
 <p>
 <a href="/">Palaa takaisin</a>
+
+{% endblock %}

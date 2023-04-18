@@ -7,13 +7,13 @@ Sovelluksen ominaisuuksia:
 <p>
 <li>Käyttäjä voi kirjautua sisään ja ulos sekä luoda uuden tunnuksen. 
 
-<li>Käyttäjä näkee omat projektit ja voi poistaa niitä. (TODO) 
+<li>Käyttäjä näkee omat projektit ja voi poistaa niitä. 
 
 <li>Käyttäjä voi lisätä omalle projektille aloituspäivämäärän, päätöspäivämäärän ja tiedon siitä mitä materiaalia ja ohjetta on käyttänyt (viimeinen toiminnallisuus ei vielä toiminnassa). 
 
-<li>Käyttäjä voi laatia oman käsityöohjeen ja antaa sille vaikeusasteen.(TODO)
+<li>Käyttäjä voi laatia oman käsityöohjeen ja antaa sille vaikeusasteen.
 
-<li>Käyttäjä voi katsella muiden ohjeita ja projekteja ja kommentoida niitä (tähdet ja kommentit) ja lukea muiden kommentteja.(TODO) 
+<li>Käyttäjä voi katsella muiden ohjeita ja projekteja ja kommentoida niitä (tähdet ja kommentit) ja lukea muiden kommentteja. 
 
 <li>Käyttäjä pystyy luomaan uuden projektin/ohjeen ja poistamaan sen, sekä poistamaan muiden antamia kommentteja.(TODO) 
 
@@ -23,12 +23,12 @@ Sovelluksen ominaisuuksia:
 
 <li> Käyttäjä pystyy keskustelemaan muiden käyttäjien kanssa yhteisellä keskustelupalstalla.
 <p>
-Kuluneen kahden viikon aikana olen tutustunut kurssin materiaaliin, ladannut tarvittavat ohjelmat ja opetellut niiden käytön. 
 Tällä hetkellä sovellukseen on mahdollista kirjautua sisään, luoda tunnus ja kirjautua ulos.
 Lisäksi sovellus antaa virheviestin, jos tunnusta luodessa yritetään luoda jo käytössä oleva tunnus tai salasanat eivät täsmää.
 Sovellus antaa virheen myös, jos kirjaudutaan väärillä tunnuksilla.
-Sovelluksessa pystyy tällä hetkellä lähettämään viestejä yleiselle keskustelualueelle sekä lisäämään uusia projekteja.
-Sovelluksessa pääsee klikkaamalla projektin nimeä projektin sivulle.
+Sovelluksessa pystyy tällä hetkellä lähettämään viestejä yleiselle keskustelualueelle sekä lisäämään uusia projekteja ja ohjeita.
+Ohjeita ja projekteja voi muut käyttäjät kommentoida.
+Sovelluksessa pääsee klikkaamalla projektin/ohjeen nimeä projektin/ohjeen sivulle.
 <p>
 Olen lisännyt sovelluksen fly.io:n, mutta se ei vielä ole testattavissa siellä (enkä ole vielä itse perehtynyt fly.io:n).
 <p>

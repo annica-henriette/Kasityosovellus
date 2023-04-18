@@ -16,13 +16,15 @@ def add_project():
      return render_template("add.html", instruction_list=instruction_list)
 
     if request.method == "POST":
+        users.check_csrf()
+
         name = request.form["name"]
         if len(name) < 1 or len(name) > 20:
             return render_template("error.html", message="Nimessä tulee olla 1-20 merkkiä")
         
         material = request.form["material"]
-        if len(material) < 1 or len(material) > 20:
-            return render_template("error.html", message="Vastauksessa tulee olla 1-20 merkkiä")
+        if len(material) < 1 or len(material) > 50:
+            return render_template("error.html", message="Vastauksessa tulee olla 1-50 merkkiä")
 
         start_date = request.form["start_date"]
 
@@ -39,13 +41,15 @@ def add_instruction():
         return render_template("add_instruction.html")
 
     if request.method == "POST":
+        users.check_csrf()
+
         name = request.form["name"]
         if len(name) < 1 or len(name) > 20:
             return render_template("error.html", message="Nimessä tulee olla 1-20 merkkiä")
 
         content = request.form["content"]
-        if len(content) < 1 or len(content) > 1000:
-            return render_template("error.html", message="Vastauksessa tulee olla 1-1000 merkkiä")
+        if len(content) < 1 or len(content) > 10000:
+            return render_template("error.html", message="Ohjeessa tulee olla 1-10000 merkkiä")
 
         difficulty = request.form["difficulty"]
 
@@ -60,6 +64,7 @@ def remove_project():
         return render_template("remove.html", list=my_projects)
 
     if request.method == "POST":
+        users.check_csrf()
 
         if "project" in request.form:
             project = request.form["project"]
@@ -75,6 +80,7 @@ def remove_instruction():
         return render_template("remove_instruction.html", list=my_instructions)
 
     if request.method == "POST":
+        users.check_csrf()
 
         if "instruction" in request.form:
             instruction = request.form["instruction"]
@@ -102,6 +108,8 @@ def show_instruction(instruction_id):
 
 @app.route("/review", methods=["post"])
 def review():
+    users.check_csrf()
+
     project_id = request.form["project_id"]
 
     stars = int(request.form["stars"])
@@ -120,6 +128,8 @@ def review():
 
 @app.route("/review_instruction", methods=["post"])
 def review_instruction():
+    users.check_csrf()
+
     instruction_id = request.form["instruction_id"]
 
     stars = int(request.form["stars"])
@@ -169,12 +179,19 @@ def logout():
 def register():
     if request.method == "GET":
         return render_template("register.html")
+
     if request.method == "POST":
         username = request.form["username"]
+        if len(username) < 1 or len(username) > 20:
+            return render_template("error.html", message="Tunnuksessa tulee olla 1-20 merkkiä")        
+
         password1 = request.form["password1"]
         password2 = request.form["password2"]
         if password1 != password2:
             return render_template("error.html", message="Salasanat eroavat")
+        if password1 == "":
+            return render_template("error.html", message="Tyhjä salasana ei kelpaa")
+
         if users.register(username, password1):
             return redirect("/")
         else:

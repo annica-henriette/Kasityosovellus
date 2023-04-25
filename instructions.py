@@ -9,7 +9,7 @@ def get_instructions():
     return result.fetchall()
 
 def get_my_instructions(user_id):
-    sql = text("""SELECT id, name FROM instructions
+    sql = text("""SELECT id, name, content, difficulty FROM instructions
 	       WHERE creator_id=:user_id ORDER BY name""")
     return db.session.execute(sql, {"user_id":user_id}).fetchall()
 

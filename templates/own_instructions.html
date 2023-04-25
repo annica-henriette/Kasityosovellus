@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="subhead">
+  <h2>Ohjeet</h2>
+  <p>
+  Ohjeiden määrä: {{ count }}
+  <hr>
+
+  {% for instruction in instructions %}
+  <i>Nimi:</i> <a href="/instructions/{{ instruction[0] }}">{{ instruction[1] }}</a>
+  <p>
+  <i>Ohjeen sisältö:</i> {{ instruction[2] }}
+  <p>
+  <i>Vaikeusaste:</i> {{ instruction[3] }}
+  <p>
+  <hr>
+  {% endfor %}
+</div>
+
+<p>
+
+<a href="/add_instruction">Lisää ohje</a>
+<a href="/remove_instruction">Poista ohje</a>
+
+{% endblock %}

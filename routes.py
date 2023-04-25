@@ -16,6 +16,13 @@ def own_projects():
         list = projects.get_my_projects(users.user_id())
         return render_template("own_projects.html", count=len(list), projects=list)
 
+@app.route("/own_instructions", methods=["get"])
+def own_instructions():
+
+    if request.method == "GET":
+        list = instructions.get_my_instructions(users.user_id())
+        return render_template("own_instructions.html", count=len(list), instructions=list)
+
 @app.route("/add", methods=["get", "post"])
 def add_project():
     if request.method == "GET":

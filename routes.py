@@ -1,5 +1,5 @@
 from app import app
-import messages, users, projects, instructions
+import reviews, messages, users, projects, instructions
 from flask import render_template, request, redirect
 
 @app.route("/")
@@ -113,6 +113,26 @@ def remove_message():
         if "message" in request.form:
             message = request.form["message"]
             messages.remove_message(message, users.user_id())
+
+        return redirect("/")
+
+@app.route("/delete_review", methods=["get", "post"])
+def remove_review():
+
+    if request.method == "GET":
+        my_reviews = reviews.get_my_reviews(users.user_id())
+
+        if len(my_reviews) < 1:
+            return render_template("error.html", message="Et ole arvioinut mitään")
+
+        return render_template("delete_review.html", list=my_reviews)
+
+    if request.method == "POST":
+        users.check_csrf()
+
+        if "review" in request.form:
+            review = request.form["review"]
+            reviews.remove_review(review, users.user_id())
 
         return redirect("/")
 

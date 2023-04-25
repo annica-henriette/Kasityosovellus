@@ -15,19 +15,18 @@ Sovelluksen ominaisuuksia:
 
 <li>Käyttäjä voi katsella muiden ohjeita ja projekteja ja kommentoida niitä (tähdet ja kommentit) ja lukea muiden kommentteja. 
 
-<li>Käyttäjä pystyy luomaan uuden projektin/ohjeen ja poistamaan sen, sekä poistamaan muiden antamia kommentteja.(TODO) 
+<li>Käyttäjä voi poistaa omia kommentteja ja viestejä.
 
-<li>Käyttäjä pystyy näkemään tilastoa siitä, kuinka moni on aloittanut hänen laatiman ohjeen.(TODO) 
-
-<li>Käyttäjä pystyy järjestämään toisen käyttäjän laatimat ohjeet vaikeusjärjestyksessä.(TODO, saattaa olla, että jää pois)
+<li>Käyttäjä pystyy luomaan uuden projektin/ohjeen ja poistamaan sen. 
 
 <li> Käyttäjä pystyy keskustelemaan muiden käyttäjien kanssa yhteisellä keskustelupalstalla.
 <p>
 Tällä hetkellä sovellukseen on mahdollista kirjautua sisään, luoda tunnus ja kirjautua ulos.
 Lisäksi sovellus antaa virheviestin, jos tunnusta luodessa yritetään luoda jo käytössä oleva tunnus tai salasanat eivät täsmää.
-Sovellus antaa virheen myös, jos kirjaudutaan väärillä tunnuksilla.
+Sovellus antaa virheen myös, jos kirjaudutaan väärillä tunnuksilla tai salasana on liian lyhyt.
 Sovelluksessa pystyy tällä hetkellä lähettämään viestejä yleiselle keskustelualueelle sekä lisäämään uusia projekteja ja ohjeita.
 Ohjeita ja projekteja voi muut käyttäjät kommentoida.
+Omia ohjeita, projekteja, kommentteja ja viestejä voi myös poistaa.
 Sovelluksessa pääsee klikkaamalla projektin/ohjeen nimeä projektin/ohjeen sivulle.
 <p>
 Olen lisännyt sovelluksen fly.io:n, mutta se ei vielä ole testattavissa siellä (enkä ole vielä itse perehtynyt fly.io:n).
@@ -43,7 +42,7 @@ SECRET_KEY=salainen-avain
 Seuraavaksi aktivoi virtuaaliympäristö ja asenna sovelluksen riippuvuudet komennoilla
 <li><i>$ python3 -m venv venv</i>
 <li><i>$ source venv/bin/activate</i>
-<li><i>$ pip install -r ./requirements.txt</i> (päivitetty 27.3.2023)
+<li><i>$ pip install -r ./requirements.txt</i> (päivitetty 25.4.2023)
 <p>
 Määritä vielä tietokannan skeema komennolla
 <p>

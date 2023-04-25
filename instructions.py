@@ -27,8 +27,10 @@ def add_instruction(creator_id, name, content,difficulty):
     return instruction_id
 
 def remove_instruction(instruction_id, user_id):
-    sql = text("DELETE FROM instructions WHERE id=:id AND creator_id=:user_id")
-    db.session.execute(sql, {"id":instruction_id, "user_id":user_id})
+    sql1 = text("DELETE FROM reviews WHERE instruction_id=:instruction_id")
+    sql = text("DELETE FROM instructions WHERE id=:instruction_id AND creator_id=:user_id")
+    db.session.execute(sql1, {"instruction_id":instruction_id, "user_id":user_id})    
+    db.session.execute(sql, {"instruction_id":instruction_id, "user_id":user_id})
     db.session.commit()
 
 def add_review(instruction_id, user_id, stars, comment):

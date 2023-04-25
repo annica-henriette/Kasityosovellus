@@ -24,7 +24,7 @@ def add_project():
         
         material = request.form["material"]
         if len(material) < 1 or len(material) > 50:
-            return render_template("error.html", message="Vastauksessa tulee olla 1-50 merkkiä")
+            return render_template("error.html", message="Materiaalin vastauksessa tulee olla 1-50 merkkiä")
 
         start_date = request.form["start_date"]
 
@@ -93,6 +93,26 @@ def remove_instruction():
         if "instruction" in request.form:
             instruction = request.form["instruction"]
             instructions.remove_instruction(instruction, users.user_id())
+
+        return redirect("/")
+
+@app.route("/remove_message", methods=["get", "post"])
+def remove_message():
+
+    if request.method == "GET":
+        my_messages = messages.get_my_messages(users.user_id())
+
+        if len(my_messages) < 1:
+            return render_template("error.html", message="Et ole lähettänyt yhtään viestiä")
+
+        return render_template("remove_message.html", list=my_messages)
+
+    if request.method == "POST":
+        users.check_csrf()
+
+        if "message" in request.form:
+            message = request.form["message"]
+            messages.remove_message(message, users.user_id())
 
         return redirect("/")
 
@@ -203,6 +223,8 @@ def register():
             return render_template("error.html", message="Salasanat eroavat")
         if password1 == "":
             return render_template("error.html", message="Tyhjä salasana ei kelpaa")
+        if len(password1) < 8:
+	    return render_template("error.html", message="Salasanan tulee olla vähintään 8 merkkiä pitkä")
 
         if users.register(username, password1):
             return redirect("/")

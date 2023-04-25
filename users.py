@@ -5,18 +5,17 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from sqlalchemy.sql import text
 
 def login(username, password):
-    sql = text("SELECT id, password FROM users WHERE username=:username")
+    sql = text("SELECT id, password, username FROM users WHERE username=:username")
     result = db.session.execute(sql, {"username":username})
     user = result.fetchone()
     if not user:
         return False
-    else:
-        if check_password_hash(user.password, password):
-            session["user_id"] = user.id
-            session["csrf_token"] = os.urandom(16).hex()
-            return True
-        else:
-            return False
+    if not check_password_hash(user.password, password):
+        return False
+    session["user_id"] = user.id
+    session["username"] = user.username
+    session["csrf_token"] = os.urandom(16).hex()
+    return True
 
 def logout():
     del session["user_id"]

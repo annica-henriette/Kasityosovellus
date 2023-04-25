@@ -58,9 +58,9 @@ td, th {
 
 form {
     padding: .5em;
-    background: lavenderblush;
+    background-color: #fffafa;
     border-radius: .5em;
-    max-width: 20em;
+    max-width: 25em;
     margin-bottom: 2em;
     margin-left: 2em;
     

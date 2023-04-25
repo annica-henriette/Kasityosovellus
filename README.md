@@ -9,7 +9,7 @@ Sovelluksen ominaisuuksia:
 
 <li>Käyttäjä näkee omat projektit ja voi poistaa niitä. 
 
-<li>Käyttäjä voi lisätä omalle projektille aloituspäivämäärän, päätöspäivämäärän ja tiedon siitä mitä materiaalia ja ohjetta on käyttänyt (viimeinen toiminnallisuus ei vielä toiminnassa). 
+<li>Käyttäjä voi lisätä omalle projektille aloituspäivämäärän, päätöspäivämäärän ja tiedon siitä mitä materiaalia ja ohjetta on käyttänyt. 
 
 <li>Käyttäjä voi laatia oman käsityöohjeen ja antaa sille vaikeusasteen.
 
@@ -31,7 +31,7 @@ Sovelluksessa pääsee klikkaamalla projektin/ohjeen nimeä projektin/ohjeen siv
 <p>
 Olen lisännyt sovelluksen fly.io:n, mutta se ei vielä ole testattavissa siellä (enkä ole vielä itse perehtynyt fly.io:n).
 <p>
-<h2>Sovelluksen testaamisohjeet paikallisesti:</h2> (ohjeet työn alla)
+<h2>Sovelluksen testaamisohjeet paikallisesti:</h2>
 <p>
 Kloonaa tämä repositorio omalle koneellesi ja siirry sen juurikansioon. Luo kansioon .env-tiedosto ja määritä sen sisältö seuraavanlaiseksi:
 <p>

@@ -224,7 +224,7 @@ def register():
         if password1 == "":
             return render_template("error.html", message="Tyhjä salasana ei kelpaa")
         if len(password1) < 8:
-	    return render_template("error.html", message="Salasanan tulee olla vähintään 8 merkkiä pitkä")
+            return render_template("error.html", message="Salasanan tulee olla vähintään 8 merkkiä pitkä")
 
         if users.register(username, password1):
             return redirect("/")

@@ -8,7 +8,7 @@ def get_projects():
     return result.fetchall()
 
 def get_my_projects(user_id):
-    sql = text("""SELECT id, name FROM projects
+    sql = text("""SELECT id, name, material, start_date, finishing_date FROM projects
 	       WHERE creator_id=:user_id ORDER BY name""")
     return db.session.execute(sql, {"user_id":user_id}).fetchall()
 

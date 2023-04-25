@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="subhead">
+  <h2>Projektit</h2>
+  <p>
+  Projektien määrä: {{ count }}
+  <hr>
+
+  {% for project in projects %}
+  <i>Nimi:</i> <a href="/projects/{{ project[0] }}">{{ project[1] }}</a>
+  <p>
+  <i>Materiaali:</i> {{ project[2] }}
+  <p>
+  <i>Aloituspäivä:</i> {{ project[3] }}
+  <p>
+  <i>Päätöspäivä:</i> {{ project[4] }}
+  <hr>
+  {% endfor %}
+</div>
+
+<p>
+
+<a href="/add">Lisää projekti</a>
+<a href="/remove">Poista projekti</a>
+
+{% endblock %}

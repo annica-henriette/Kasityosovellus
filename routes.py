@@ -9,6 +9,13 @@ def index():
     o_list = instructions.get_instructions()
     return render_template("index.html", count=len(list), messages=list, p_count=len(p_list), projects=p_list, o_count=len(o_list), instructions=o_list)
 
+@app.route("/own_projects", methods=["get"])
+def own_projects():
+
+    if request.method == "GET":
+        list = projects.get_my_projects(users.user_id())
+        return render_template("own_projects.html", count=len(list), projects=list)
+
 @app.route("/add", methods=["get", "post"])
 def add_project():
     if request.method == "GET":

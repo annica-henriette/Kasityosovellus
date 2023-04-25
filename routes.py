@@ -161,6 +161,10 @@ def new():
 @app.route("/send", methods=["POST"])
 def send():
     content = request.form["content"]
+    if len(content) > 1000:
+        return render_template("error.html", message="Viesti on liian pitkä")
+    if content == "":
+        return render_template("error.html", message="Viesti on liian lyhyt")
     if messages.send(content):
         return redirect("/")
     else:

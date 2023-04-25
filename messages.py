@@ -15,3 +15,12 @@ def send(content):
     db.session.execute(sql, {"content":content, "user_id":user_id})
     db.session.commit()
     return True
+
+def get_my_messages(user_id):
+    sql = text("""SELECT id, content FROM messages WHERE user_id=:user_id ORDER BY id""")
+    return db.session.execute(sql, {"user_id":user_id}).fetchall()
+
+def remove_message(message_id, user_id):
+    sql = text("DELETE FROM messages WHERE id=:message_id AND user_id=:user_id")
+    db.session.execute(sql, {"message_id":message_id, "user_id":user_id})
+    db.session.commit()

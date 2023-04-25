@@ -116,7 +116,7 @@ def remove_message():
 
         return redirect("/")
 
-@app.route("/delete_review", methods=["get", "post"])
+@app.route("/remove_review", methods=["get", "post"])
 def remove_review():
 
     if request.method == "GET":
@@ -125,7 +125,7 @@ def remove_review():
         if len(my_reviews) < 1:
             return render_template("error.html", message="Et ole arvioinut mitään")
 
-        return render_template("delete_review.html", list=my_reviews)
+        return render_template("remove_review.html", list=my_reviews)
 
     if request.method == "POST":
         users.check_csrf()

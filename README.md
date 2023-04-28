@@ -42,7 +42,7 @@ SECRET_KEY=salainen-avain
 Seuraavaksi aktivoi virtuaaliympäristö ja asenna sovelluksen riippuvuudet komennoilla
 <li><i>$ python3 -m venv venv</i>
 <li><i>$ source venv/bin/activate</i>
-<li><i>$ pip install -r ./requirements.txt</i> (päivitetty 25.4.2023)
+<li><i>$ pip install -r ./requirements.txt</i> 
 <p>
 Määritä vielä tietokannan skeema komennolla
 <p>

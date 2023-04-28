@@ -29,7 +29,7 @@ Ohjeita ja projekteja voi muut käyttäjät kommentoida.
 Omia ohjeita, projekteja, kommentteja ja viestejä voi myös poistaa.
 Sovelluksessa pääsee klikkaamalla projektin/ohjeen nimeä projektin/ohjeen sivulle.
 <p>
-Olen lisännyt sovelluksen fly.io:n, mutta se ei vielä ole testattavissa siellä (enkä ole vielä itse perehtynyt fly.io:n).
+Olen lisännyt sovelluksen fly.io:n, mutta se ei valitettavasti ole testattavissa siellä.
 <p>
 <h2>Sovelluksen testaamisohjeet paikallisesti:</h2>
 <p>

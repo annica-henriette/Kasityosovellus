@@ -29,8 +29,6 @@ Ohjeita ja projekteja voi muut käyttäjät kommentoida.
 Omia ohjeita, projekteja, kommentteja ja viestejä voi myös poistaa.
 Sovelluksessa pääsee klikkaamalla projektin/ohjeen nimeä projektin/ohjeen sivulle.
 <p>
-Olen lisännyt sovelluksen fly.io:n, mutta se ei valitettavasti ole testattavissa siellä.
-<p>
 <h2>Sovelluksen testaamisohjeet paikallisesti:</h2>
 <p>
 Kloonaa tämä repositorio omalle koneellesi ja siirry sen juurikansioon. Luo kansioon .env-tiedosto ja määritä sen sisältö seuraavanlaiseksi:
